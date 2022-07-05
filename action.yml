@@ -2,7 +2,8 @@
 name: 'Google Secrets Masker '
 description: |
   This action will load all secrets from Google Secrets Manager. This make sure that
-  the values always will be masked in the logs if they somehow accidently leak.
+  the values always will be masked in the logs if they somehow accidently leak. It requires
+  the github to google auth.
 inputs:
   workload_identity_provider:
     description: |
@@ -15,7 +16,7 @@ inputs:
     required: true
   filter:
     description: |
-      Filter the secrets to be masked. For usage see gcloud cli. Defaults to ""
+      Filter the secrets to be masked. See https://cloud.google.com/secret-manager/docs/filtering. Defaults to ""
     required: false
     default: ""
 runs:
