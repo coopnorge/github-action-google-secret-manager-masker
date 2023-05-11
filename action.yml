@@ -39,7 +39,7 @@ runs:
       run: |
         key_list=$( for secret_key in $(gcloud secrets list --filter="${{inputs.filter}}" --format=json | jq -r '.[].name') ; do name=$(echo $secret_key| cut -d / -f4-); echo -n $name:$secret_key, ; done )
         echo masking ${key_list::-1}
-        echo ::set-output name=key_list::${key_list::-1}
+        echo "key_list=${key_list::-1}" >> $GITHUB_OUTPUT
 
     - id: secrets
       uses: google-github-actions/get-secretmanager-secrets@v0
