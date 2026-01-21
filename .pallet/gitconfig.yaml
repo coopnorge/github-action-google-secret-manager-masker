@@ -1,0 +1,21 @@
+apiVersion: github.coop.no/v1alpha1
+kind: RepositoryConfig
+metadata:
+  name: github-action-google-secret-manager-masker
+spec:
+  description: "No description provided"
+  visibility: "public"
+
+
+  branches:
+    default: "main"
+    protection:
+      - id: "main"
+        pattern: "main"
+        requireSignedCommits: false
+        requiredStatusChecks:
+          checks:
+            - "build"
+        requiredPullRequestReviews:
+          requireCodeOwnerReviews: true
+
