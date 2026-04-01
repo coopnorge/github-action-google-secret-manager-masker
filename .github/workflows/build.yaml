@@ -4,5 +4,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    permissions: {}
     steps:
       - run: echo fake build
