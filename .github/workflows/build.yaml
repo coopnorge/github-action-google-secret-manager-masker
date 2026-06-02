@@ -3,7 +3,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
     permissions: {}
+    runs-on: ubuntu-slim
     steps:
       - run: echo fake build
